@@ -1,0 +1,15 @@
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Generated files
+/docs/build.json
+
+# Dependencies
+package-lock.json
+node_modules/
+
+# Editors
+.idea/
+.vscode/

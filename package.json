@@ -1,0 +1,60 @@
+{
+  "name": "@gradient/blob-storage",
+  "version": "1.0.1",
+  "description": "A storage plugable api for persisting data to a data store",
+  "main": "dist/index.js",
+  "types": "src/definitions.d.ts",
+  "scripts": {
+    "test": "NODE_ENV=test mocha --require ts-node/register 'tests/**/*.test.ts'",
+    "pretty": "prettier --trailing-comma es5 --single-quote --write '{src,tests}/**/*.ts'",
+    "build": "gulp"
+  },
+  "keywords": [
+    "blob",
+    "storage",
+    "multi",
+    "provider",
+    "purpose",
+    "data",
+    "store",
+    "s3"
+  ],
+  "author": "Gradient Limited <oss@gradient.co>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gradient/blob-storage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gradient/blob-storage/issues"
+  },
+  "dependencies": {
+    "aws-sdk": "2.161.0",
+    "bluebird": "3.5.1",
+    "mkdirp": "0.5.1",
+    "mock-aws-s3": "2.6.0",
+    "uuid": "3.1.0"
+  },
+  "devDependencies": {
+    "@types/aws-sdk": "2.7.0",
+    "@types/bluebird": "3.5.18",
+    "@types/chai": "4.0.8",
+    "@types/chai-as-promised": "7.1.0",
+    "@types/config": "0.0.33",
+    "@types/mkdirp": "0.5.2",
+    "@types/mocha": "2.2.44",
+    "@types/mock-aws-s3": "2.6.0",
+    "@types/uuid": "3.4.3",
+    "chai": "4.1.2",
+    "chai-as-promised": "7.1.1",
+    "del": "3.0.0",
+    "gulp": "3.9.1",
+    "gulp-sourcemaps": "2.6.1",
+    "gulp-typescript": "3.2.3",
+    "mocha": "4.0.1",
+    "prettier": "1.8.2",
+    "ts-lint": "4.5.1",
+    "ts-node": "4.0.1",
+    "typescript": "2.6.2"
+  }
+}
