@@ -1,17 +1,25 @@
 {
-  "name": "gradient-blob-storage",
+  "name": "@gradient/blob-storage",
   "version": "1.0.0",
   "description": "A storage plugable api for persisting data to a data store",
   "main": "dist/index.js",
+  "types": "src/definitions.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=test mocha --require ts-node/register 'tests/**/*.test.ts'",
     "pretty": "prettier --trailing-comma es5 --single-quote --write '{src,tests}/**/*.ts'"
   },
   "keywords": [
-    "gradient"
+    "blob",
+    "storage",
+    "multi",
+    "provider",
+    "purpose",
+    "data",
+    "store",
+    "s3"
   ],
-  "author": "Simon McClive",
-  "license": "UNLICENSED",
+  "author": "Gradient Limited <oss@gradient.co>",
+  "license": "MIT",
   "dependencies": {
     "aws-sdk": "2.161.0",
     "bluebird": "3.5.1",
@@ -20,7 +28,16 @@
   "devDependencies": {
     "@types/aws-sdk": "2.7.0",
     "@types/bluebird": "3.5.18",
+    "@types/chai": "4.0.8",
+    "@types/chai-as-promised": "7.1.0",
     "@types/config": "0.0.33",
-    "prettier": "1.8.2"
+    "@types/mocha": "2.2.44",
+    "chai": "4.1.2",
+    "chai-as-promised": "7.1.1",
+    "mocha": "4.0.1",
+    "prettier": "1.8.2",
+    "ts-lint": "4.5.1",
+    "ts-node": "4.0.1",
+    "typescript": "2.6.2"
   }
 }
