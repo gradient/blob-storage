@@ -1,7 +1,21 @@
+export interface S3Config {
+  accessKeyId: string;
+  secretAccessKey: string;
+  region: string;
+}
+
+export interface MockS3Config {
+  basePath: string;
+}
+
+export interface LocalConfig {
+  storageLocation: string;
+}
+
 export interface BlobItem {
   key: string;
   customerId: string;
-  itemType: string;
+  itemType?: string;
 }
 
 export interface BlobStorageClient {
@@ -14,7 +28,7 @@ export interface BlobStorageClient {
    * @param {string} itemType: The customer_id, this allows the implementation to make decisions using namespace
    * @returns {any}
    */
-  getItem: (key: string, customerId: string, itemType: string) => any;
+  getItem: (key: string, locationId: string, itemType?: string) => any;
 
   /**
    * Takes an array of blob items and retrieves them from storage.
@@ -36,9 +50,9 @@ export interface BlobStorageClient {
    */
   setItem: (
     key: string,
-    value: string,
-    customerId: string,
-    itemType: string
+    filePath: string,
+    locationId: string,
+    itemType?: string
   ) => any;
 
   /**
@@ -50,9 +64,5 @@ export interface BlobStorageClient {
    * restrictions by customer.
    * @returns {any}
    */
-  deleteItem: (key: string, customerId: string, itemType: string) => any;
-}
-
-export interface GenericObject {
-  [key: string]: any;
+  deleteItem: (key: string, locationId: string, itemType?: string) => any;
 }

@@ -10,6 +10,8 @@
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "arrow-parens": false,
+    "whitespace": [true, "check-type"],
+    "only-arrow-functions": [true, "allow-named-functions"],
     "trailing-comma": [
       true,
       {
