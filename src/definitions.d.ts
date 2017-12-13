@@ -1,11 +1,6 @@
 export interface S3Config {
   accessKeyId: string;
   secretAccessKey: string;
-  region: string;
-}
-
-export interface MockS3Config {
-  basePath: string;
 }
 
 export interface LocalConfig {

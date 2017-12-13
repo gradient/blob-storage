@@ -25,6 +25,10 @@ export class LocalBlobStorage extends BaseStorage {
   constructor(config: LocalConfig) {
     super();
 
+    if (!config.storageLocation) {
+      throw new Error('storageLocation cannot be empty');
+    }
+
     this.storageLocation = config.storageLocation;
   }
 

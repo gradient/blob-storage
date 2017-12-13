@@ -21,6 +21,26 @@ describe('Local Blob Storage', function localBlobStorage() {
     storageLocation: storageDir,
   });
 
+  it('Throws an error if storageLocation is not provided', function test() {
+    function createLocalBlobStore(): LocalBlobStorage {
+      const config: any = {};
+
+      return new LocalBlobStorage(config);
+    }
+
+    assert.throws(createLocalBlobStore, 'storageLocation cannot be empty');
+  });
+
+  it('Throws an error if storageLocation is empty', function test() {
+    function createLocalBlobStore(): LocalBlobStorage {
+      return new LocalBlobStorage({
+        storageLocation: '',
+      });
+    }
+
+    assert.throws(createLocalBlobStore, 'storageLocation cannot be empty');
+  });
+
   describe('Set Item', function upload() {
     afterEach(() => {
       return exec('rm -r ' + storageDir);

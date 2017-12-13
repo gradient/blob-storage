@@ -12,6 +12,9 @@ const deleteFile = Bluebird.promisify(fs_1.unlink);
 class LocalBlobStorage extends base_1.BaseStorage {
     constructor(config) {
         super();
+        if (!config.storageLocation) {
+            throw new Error('storageLocation cannot be empty');
+        }
         this.storageLocation = config.storageLocation;
     }
     setItem(key, filePath, locationId, itemType) {
