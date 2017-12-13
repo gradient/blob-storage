@@ -66,3 +66,8 @@ export interface BlobStorageClient {
    */
   deleteItem: (key: string, locationId: string, itemType?: string) => any;
 }
+
+export interface ModuleConfig {
+  provider: string;
+  settings: S3Config | LocalConfig;
+}
