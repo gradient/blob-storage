@@ -21,6 +21,13 @@
   ],
   "author": "Gradient Limited <oss@gradient.co>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gradient/blob-storage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gradient/blob-storage/issues"
+  },
   "dependencies": {
     "aws-sdk": "2.161.0",
     "bluebird": "3.5.1",
