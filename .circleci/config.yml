@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/build
 
     docker:
-      - image: circleci/nodejs:8.9
+      - image: circleci/node:8.9
 
     steps:
       - checkout
