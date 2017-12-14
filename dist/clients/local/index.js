@@ -49,7 +49,7 @@ class LocalBlobStorage extends base_1.BaseStorage {
         }
         return deleteFile(filePath)
             .then(() => {
-            Bluebird.resolve();
+            return Bluebird.resolve();
         })
             .catch((err) => {
             throw new Error('Failed to delete item');

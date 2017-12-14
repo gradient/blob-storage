@@ -1,6 +1,6 @@
 {
   "name": "@gradient/blob-storage",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A storage plugable api for persisting data to a data store",
   "main": "dist/index.js",
   "types": "src/definitions.d.ts",
