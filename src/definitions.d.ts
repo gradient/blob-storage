@@ -66,3 +66,5 @@ export interface ModuleConfig {
   provider: string;
   settings: S3Config | LocalConfig;
 }
+
+export function getBlobStore(config: ModuleConfig): BlobStorageClient;
