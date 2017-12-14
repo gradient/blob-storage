@@ -6,7 +6,8 @@
   "types": "src/definitions.d.ts",
   "scripts": {
     "test": "NODE_ENV=test mocha --require ts-node/register 'tests/**/*.test.ts'",
-    "pretty": "prettier --trailing-comma es5 --single-quote --write '{src,tests}/**/*.ts'"
+    "pretty": "prettier --trailing-comma es5 --single-quote --write '{src,tests}/**/*.ts'",
+    "build": "gulp"
   },
   "keywords": [
     "blob",
