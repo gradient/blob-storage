@@ -8,15 +8,15 @@ const local_1 = require("./clients/local");
 const s3_1 = require("./clients/s3");
 __export(require("./clients"));
 function getBlobStore(config) {
-    config.provider = config.provider.toLowerCase().trim();
-    if (config.provider === 'local' && isLocalConfig(config.settings)) {
+    const provider = config.provider.toLowerCase().trim();
+    if (provider === 'local' && isLocalConfig(config.settings)) {
         const settings = config.settings;
         if (!settings.storageLocation) {
             throw new Error('storageLocation cannot be empty');
         }
         return new local_1.LocalBlobStorage(settings);
     }
-    else if (config.provider === 's3' && isS3Config(config.settings)) {
+    else if (provider === 's3' && isS3Config(config.settings)) {
         const settings = config.settings;
         if (!settings.accessKeyId || !settings.secretAccessKey) {
             throw new Error('accessKeyId and secretAccessKey cannot be empty');

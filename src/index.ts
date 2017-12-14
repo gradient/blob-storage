@@ -11,9 +11,9 @@ import { S3BlobStorage } from './clients/s3';
 export * from './clients';
 
 export function getBlobStore(config: ModuleConfig): BlobStorageClient {
-  config.provider = config.provider.toLowerCase().trim();
+  const provider = config.provider.toLowerCase().trim();
 
-  if (config.provider === 'local' && isLocalConfig(config.settings)) {
+  if (provider === 'local' && isLocalConfig(config.settings)) {
     const settings: LocalConfig = config.settings as LocalConfig;
 
     if (!settings.storageLocation) {
@@ -21,7 +21,7 @@ export function getBlobStore(config: ModuleConfig): BlobStorageClient {
     }
 
     return new LocalBlobStorage(settings);
-  } else if (config.provider === 's3' && isS3Config(config.settings)) {
+  } else if (provider === 's3' && isS3Config(config.settings)) {
     const settings: S3Config = config.settings as S3Config;
 
     if (!settings.accessKeyId || !settings.secretAccessKey) {
